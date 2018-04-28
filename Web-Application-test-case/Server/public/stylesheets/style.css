@@ -1,0 +1,29 @@
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(220, 244, 245) !important;
+}
+
+.maindiv {
+  /* margin: auto; */
+  /* width: 50%; */
+  border: 2px dotted blue;
+  padding: 40px;
+  text-align: center;
+
+  position: absolute;
+  top: 20%;
+  left: 35%;
+}
+
+.form {
+  margin: 10px;
+}
+
+.btn {
+  width: 300px;
+}
+
+a {
+  color: #00B7FF;
+}
