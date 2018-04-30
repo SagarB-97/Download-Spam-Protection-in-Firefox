@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var single_download = require('./routes/single_download');
-var multiple_downloads = require('./routes/multiple_downloads');
 var delay_download = require('./routes/delay_download');
 
 var app = express();
@@ -29,7 +28,6 @@ app.use('/', index);
 app.use('/users', users);
 
 app.use('/single_download', single_download);
-app.use('/multiple_downloads', multiple_downloads);
 app.use('/delay_download', delay_download);
 
 // catch 404 and forward to error handler
