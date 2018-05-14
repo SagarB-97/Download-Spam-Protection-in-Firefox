@@ -1,13 +1,12 @@
 body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(220, 244, 245) !important;
 }
 
 .maindiv {
   /* margin: auto; */
   /* width: 50%; */
-  border: 2px dotted blue;
+  border: 2px dotted;
   padding: 40px;
   text-align: center;
 
