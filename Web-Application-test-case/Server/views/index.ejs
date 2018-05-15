@@ -3,7 +3,6 @@
   <head>
     <title>Download Spam Protection for Firefox</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -16,7 +15,7 @@
         <button type="submit" class="btn btn-primary">Initiate Download</button>
       </form>
 
-      <button id="multdown_button" class="btn btn-primary">Initiate 5 Downloads</button>
+      <button id="multdown_button" class="btn btn-primary" onclick="multdown()">Initiate 5 Downloads</button>
 
       <form class="form" action="/delay_download" method="GET">
         <button class="btn btn-primary">Initiate Download after delay</button>
@@ -25,22 +24,21 @@
     </div>
 
     <script>
-      $(document).ready(function(){
-        $("#multdown_button").click(function(){
-          var i = 1;
-          var intervalId = setInterval(function() {
-                            var $a = $('<a />', {
-                              'href': '/single_download',
-                              'text': "click"
-                              }).hide().appendTo("body")[0].click();
-                              i = i + 1;
-
-                              if(i>=6){
-                                clearInterval(intervalId);
-                              }
-                          }, 1000);
-        });
-      });
+      function multdown(){
+        var i = 1;
+        var intervalId = setInterval(function() {
+                          var a = document.createElement("a");
+                          a.setAttribute("href", "/single_download")
+                          a.style.visibility = "hidden";
+                          document.body.appendChild(a);
+                          a.click();
+                          
+                          i = i + 1;
+                          if(i>=6){
+                            clearInterval(intervalId);
+                          }
+                        }, 1000);
+      }
     </script>
   </body>
 </html>

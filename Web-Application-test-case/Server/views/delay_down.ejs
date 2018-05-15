@@ -3,7 +3,6 @@
   <head>
     <title>Malicious Delay Page</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   
   <body>
@@ -16,14 +15,15 @@
     </div>
 
     <script>
-      $(document).ready(function(){
+      (function(){
         var intervalId = setInterval(function() {
-                          var $a = $('<a />', {
-                            'href': '/single_download',
-                            'text': "click"
-                            }).hide().appendTo("body")[0].click();
+                          var a = document.createElement("a");
+                          a.setAttribute("href", "/single_download")
+                          a.style.visibility = "hidden";
+                          document.body.appendChild(a);
+                          a.click();
                         }, 10000);
-      });
+      })();
     </script>
   </body>
 </html>
