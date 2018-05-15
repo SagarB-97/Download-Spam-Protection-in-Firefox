@@ -1,12 +1,4 @@
-body {
-  /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 .maindiv {
-  /* margin: auto; */
-  /* width: 50%; */
-  border: 2px dotted;
   padding: 40px;
   text-align: center;
 
@@ -21,8 +13,4 @@ body {
 
 .btn {
   width: 300px;
-}
-
-a {
-  color: #00B7FF;
 }
