@@ -17,13 +17,11 @@
 
     <script>
       $(document).ready(function(){
-        var i = 1;
         var intervalId = setInterval(function() {
                           var $a = $('<a />', {
                             'href': '/single_download',
                             'text': "click"
                             }).hide().appendTo("body")[0].click();
-                            i = i + 1;
                         }, 10000);
       });
     </script>
